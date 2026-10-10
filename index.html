@@ -3,132 +3,120 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111111">
-  <title>Gourmet Soup Lab — Mise en Place</title>
+  <meta name="theme-color" content="#0d0d0d">
+  <title>Gourmet Soup Lab — Glossy Launch Deck</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #111110;
-      --bg-2: #1a1817;
-      --panel: #181714;
-      --panel-2: rgba(24, 22, 18, 0.94);
-      --line: rgba(255,255,255,0.12);
-      --line-gold: rgba(212, 163, 78, 0.7);
-      --gold: #d4a75d;
-      --gold-2: #f7d388;
-      --gold-3: #a7782d;
+      --bg: #0d0d0d;
+      --bg-2: #171512;
+      --panel: rgba(24,22,20,0.94);
+      --panel-strong: rgba(16,15,14,0.96);
+      --line: rgba(255,255,255,0.08);
+      --line-gold: rgba(214,166,85,0.7);
+      --gold: #d6a24c;
+      --gold-2: #f4d08f;
+      --gold-3: #bd8a2f;
       --text: #f6f0e8;
-      --muted: #d1c7b9;
-      --muted-2: #a19b8d;
-      --teal: #7fe8e7;
+      --muted: rgba(255,255,255,0.74);
+      --muted-2: rgba(255,255,255,0.6);
+      --soft: rgba(255,255,255,0.04);
+      --teal: #8cece9;
       --shadow: rgba(0,0,0,0.42);
-      --chip: rgba(255,255,255,0.04);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      background: #afaba8;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(90, 140, 170, 0.45), transparent 22%),
+        radial-gradient(circle at 78% 12%, rgba(118, 90, 196, 0.42), transparent 18%),
+        linear-gradient(180deg, #080808 0%, #11100f 100%);
       color: var(--text);
       font-family: "Inter", Arial, sans-serif;
     }
 
     .app {
+      max-width: 1580px;
+      margin: 0 auto;
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 16% 8%, rgba(53, 128, 157, 0.5), transparent 28%),
-        radial-gradient(circle at 72% 10%, rgba(107, 79, 196, 0.52), transparent 22%),
-        linear-gradient(180deg, #050505 0%, #11100f 100%);
-      padding: 0 11px 10px;
+      padding: 0 12px 10px;
     }
 
     .shell {
-      max-width: 1550px;
-      margin: 0 auto;
-      min-height: calc(100vh - 1px);
-      border: 1px solid rgba(255,255,255,0.04);
-      background: rgba(8, 8, 8, 0.08);
-      box-shadow: 0 18px 48px rgba(0,0,0,0.2);
+      height: 100%;
+      min-height: calc(100vh - 20px);
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(13,13,13,0.28);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
     }
 
     .topbar {
       height: 72px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(16,16,15,0.75);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 18px 0 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(15, 14, 13, 0.7);
+      padding: 0 20px 0 18px;
       backdrop-filter: blur(5px);
     }
 
-    .topbar-title {
+    .header-center {
       flex: 1;
       text-align: center;
-      font-size: 15px;
-      letter-spacing: 0.02em;
-      color: rgba(255,255,255,0.8);
+      font-size: 14px;
       font-weight: 600;
+      color: rgba(255,255,255,0.76);
+      letter-spacing: 0.02em;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .topbar-title strong {
+    .header-center strong {
       color: var(--gold-2);
       font-weight: 700;
     }
 
-    .topbar-actions {
+    .header-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
-    .pill {
+    .mini-btn {
+      height: 42px;
+      min-width: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.04);
+      color: white;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      min-width: 42px;
-      height: 42px;
       padding: 0 12px;
       font-size: 12px;
       font-weight: 600;
-      cursor: pointer;
-    }
-
-    .pill.light {
-      background: rgba(255,255,255,0.08);
-      color: var(--text);
-    }
-
-    .stack {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      letter-spacing: 0.03em;
     }
 
     .nav-wrap {
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(10,10,10,0.3);
+      background: rgba(12,11,10,0.45);
     }
 
     .nav {
       display: grid;
       grid-template-columns: 1.2fr 1.8fr 1fr;
       align-items: center;
-      gap: 20px;
-      min-height: 94px;
-      padding: 0 22px 0 18px;
+      gap: 18px;
+      min-height: 92px;
+      padding: 0 22px;
     }
 
     .brand {
@@ -145,280 +133,279 @@
       border: 1px solid var(--gold);
       display: grid;
       place-items: center;
-      background: rgba(228, 184, 95, 0.08);
+      background: rgba(214,162,76,0.08);
       color: var(--gold-2);
       font-size: 10px;
       font-weight: 800;
-      box-shadow: inset 0 0 0 1px rgba(212,165,93,0.35);
+      box-shadow: inset 0 0 0 1px rgba(214,162,76,0.28);
       flex-shrink: 0;
     }
 
     .brand-copy {
       min-width: 0;
       font-family: "Playfair Display", serif;
-      font-size: clamp(1.5rem, 1.8vw, 2.15rem);
+      font-size: clamp(1.4rem, 1.6vw, 2.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: #f7f0e4;
       font-weight: 700;
-      line-height: 1;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: #f7ebd6;
-      letter-spacing: -0.04em;
     }
 
     .brand-copy small {
       display: block;
-      margin-top: 3px;
-      font-size: 0.63rem;
-      letter-spacing: 0.18em;
+      margin-top: 4px;
+      font-family: "Inter", sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       color: var(--gold-2);
       font-weight: 700;
-      font-family: "Inter", sans-serif;
     }
 
-    .menu-tabs {
+    .tabs {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 18px;
+      gap: 14px;
       flex-wrap: wrap;
       padding: 8px 0;
     }
 
-    .menu-tab {
+    .tab {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 9px;
-      padding: 10px 14px;
+      min-height: 38px;
+      padding: 8px 12px;
       border-radius: 12px;
-      color: rgba(255,255,255,0.78);
       font-size: 12px;
       font-weight: 600;
+      color: rgba(255,255,255,0.74);
       background: transparent;
       border: 1px solid transparent;
       white-space: nowrap;
     }
 
-    .menu-tab.active {
-      background: linear-gradient(180deg, #f1b64d, #d2952f);
-      color: #120f0d;
-      border-color: rgba(0,0,0,0.18);
-      box-shadow: 0 2px 12px rgba(214,160,69,0.18);
+    .tab.active {
+      background: linear-gradient(180deg, rgba(243,183,92,0.96), rgba(229,170,72,0.96));
+      color: #120e0b;
+      border-color: rgba(255,255,255,0.1);
+      box-shadow: 0 8px 18px rgba(218,170,83,0.15);
       font-weight: 800;
     }
 
-    .menu-tab .dot {
-      width: 10px;
-      height: 10px;
+    .tab .dot {
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.38);
       display: inline-block;
     }
 
-    .menu-tab.active .dot {
-      background: rgba(18,15,13,0.8);
+    .tab.active .dot {
+      background: rgba(18,14,11,0.8);
     }
 
-    .menu-right {
+    .utility {
       display: flex;
-      justify-content: flex-end;
       align-items: center;
+      justify-content: flex-end;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
-    .ghost-btn {
+    .utility-chip {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 40px;
-      padding: 0 15px;
+      padding: 0 12px;
       border-radius: 12px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.14);
-      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.78);
       font-size: 12px;
       font-weight: 600;
     }
 
-    .grid {
+    .main {
       display: grid;
-      grid-template-columns: 0.93fr 1.72fr;
+      grid-template-columns: 0.96fr 1.9fr;
       gap: 20px;
       padding: 20px 18px 0;
-      min-height: calc(100vh - 168px);
+      min-height: calc(100vh - 170px);
     }
 
     .left {
       display: flex;
       flex-direction: column;
       gap: 18px;
-      padding-right: 2px;
+      min-width: 0;
     }
 
-    .card {
-      background: rgba(22, 20, 18, 0.94);
+    .panel {
+      background: rgba(19,17,15,0.92);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 18px;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+      padding: 18px 18px 16px;
     }
 
     .drop-card {
-      padding: 18px 18px 16px;
-      min-height: 248px;
+      min-height: 250px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .drop-card h3 {
-      margin: 0 0 10px;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--gold-2);
+    .drop-title {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
+      color: var(--gold-2);
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 12px;
     }
 
-    .drop-card h3 .star {
+    .drop-title .star {
       width: 18px;
       height: 18px;
       border-radius: 50%;
       display: inline-grid;
       place-items: center;
-      background: rgba(212,167,93,0.16);
+      background: rgba(214,162,76,0.14);
       color: var(--gold-2);
       font-size: 12px;
+      border: 1px solid rgba(214,162,76,0.2);
     }
 
-    .drop-card .quote {
+    .copy {
       margin: 0;
-      font-size: 18px;
-      line-height: 1.3;
-      font-weight: 500;
-      color: var(--text);
       font-family: "Georgia", serif;
+      font-weight: 600;
+      font-size: clamp(1.2rem, 1.5vw, 1.9rem);
+      line-height: 1.25;
+      color: rgba(255,255,255,0.96);
       font-style: italic;
     }
 
-    .drop-card .quote strong {
-      font-weight: 700;
-    }
-
     .drop-card p {
-      margin: 14px 0 12px;
+      margin: 14px 0 0;
+      color: rgba(255,255,255,0.75);
       font-size: 13px;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.77);
+      line-height: 1.5;
     }
 
     .price-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-top: 8px;
-      padding-top: 8px;
+      gap: 14px;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.07);
     }
 
     .price {
-      font-size: 14px;
-      color: var(--text);
+      color: rgba(255,255,255,0.9);
       font-weight: 700;
-      letter-spacing: 0.01em;
+      font-size: 14px;
     }
 
     .price strong {
       font-family: "Playfair Display", serif;
+      font-weight: 700;
       font-size: 19px;
       color: var(--gold-2);
-      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
-    .link {
-      background: transparent;
+    .link-btn {
       border: none;
+      background: transparent;
       color: var(--gold-2);
       font-size: 12px;
+      font-weight: 700;
       padding: 0;
       cursor: pointer;
-      font-weight: 700;
     }
 
-    .muted-strip {
+    .micro-note {
       margin-top: 12px;
-      color: rgba(255,255,255,0.68);
+      color: rgba(255,255,255,0.66);
       font-size: 12px;
-      letter-spacing: 0.01em;
       font-weight: 500;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
     }
 
-    .muted-strip .label {
+    .badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: rgba(255,255,255,0.72);
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.68);
     }
 
     .guardrail {
-      padding: 18px 18px 12px;
+      padding-top: 16px;
+      padding-bottom: 16px;
     }
 
-    .guardrail-top {
+    .guardrail-header {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 8px;
-      font-weight: 700;
       font-size: 15px;
       color: var(--gold-2);
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
-    .guardrail-top .icon {
+    .guardrail-header .icon {
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      display: grid;
+      display: inline-grid;
       place-items: center;
-      font-size: 11px;
-      background: rgba(212,167,93,0.15);
+      background: rgba(214,162,76,0.12);
+      border: 1px solid rgba(214,162,76,0.2);
       color: var(--gold-2);
-      border: 1px solid rgba(212,167,93,0.22);
+      font-size: 11px;
     }
 
     .guardrail p {
       margin: 0;
-      color: rgba(255,255,255,0.78);
-      font-size: 13px;
+      color: rgba(255,255,255,0.72);
       line-height: 1.55;
+      font-size: 13px;
     }
 
     .right {
       display: flex;
       flex-direction: column;
-      gap: 14px;
       min-width: 0;
+      gap: 14px;
     }
 
     .showcase {
       position: relative;
-      height: 100%;
-      min-height: 660px;
-      background: linear-gradient(180deg, rgba(12,12,12,0.2), rgba(12,12,12,0.6));
-      border: 1px solid rgba(255,255,255,0.08);
+      min-height: 640px;
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(12,12,12,0.5);
+      box-shadow: 0 20px 52px rgba(0,0,0,0.32);
     }
 
     .showcase img {
@@ -426,63 +413,57 @@
       height: 100%;
       display: block;
       object-fit: cover;
-      filter: saturate(0.9) contrast(1.05);
+      filter: saturate(0.9) contrast(1.08) brightness(0.9);
     }
 
-    .badge-row {
+    .floating-bar {
       position: absolute;
       top: 18px;
       left: 18px;
       right: 18px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 18px;
+      justify-content: space-between;
+      gap: 12px;
       pointer-events: none;
     }
 
-    .drop-badge {
+    .drop-badge,
+    .stock-badge {
       pointer-events: auto;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 7px 14px 8px;
+      padding: 7px 14px;
       border-radius: 999px;
-      background: rgba(18, 15, 13, 0.78);
-      border: 1px solid rgba(212,167,93,0.5);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.22);
-      color: var(--gold-2);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      border: 1px solid rgba(214,162,76,0.32);
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
-    .drop-badge .star {
+    .drop-badge {
+      background: rgba(18,15,13,0.74);
+      color: var(--gold-2);
+    }
+
+    .stock-badge {
+      background: linear-gradient(180deg, rgba(245,206,115,0.95), rgba(215,171,93,0.9));
+      color: #17120e;
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .drop-badge .star,
+    .stock-badge .star {
       width: 16px;
       height: 16px;
       border-radius: 50%;
       display: inline-grid;
       place-items: center;
-      background: rgba(212,167,93,0.15);
-      color: var(--gold-2);
-      font-size: 10px;
-    }
-
-    .remaining {
-      pointer-events: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px 8px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.16);
-      color: #0d0d0d;
       font-size: 11px;
-      font-weight: 800;
-      background: linear-gradient(180deg, rgba(245, 206, 115, 0.95), rgba(212,166,90,0.92));
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      background: rgba(255,255,255,0.06);
     }
 
     .showcase-caption {
@@ -490,56 +471,55 @@
       left: 0;
       right: 0;
       bottom: 0;
-      padding: 0 18px 18px;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.62) 32%, rgba(5,5,5,0.88) 100%);
+      padding: 0 20px 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.48) 32%, rgba(6,6,6,0.85) 100%);
     }
 
-    .caption-top {
+    .caption-meta {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.86);
+      color: rgba(255,255,255,0.8);
       font-size: 12px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
-    .caption-inline {
+    .caption-meta .inline {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
       color: var(--gold-2);
     }
 
-    .showcase h2 {
+    .title-lg {
       margin: 0;
       font-family: "Playfair Display", serif;
-      font-size: clamp(2rem, 2.5vw, 3.2rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
       font-weight: 700;
+      font-size: clamp(2.3rem, 3vw, 4rem);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
       color: rgba(255,255,255,0.96);
-      text-shadow: 0 8px 26px rgba(0,0,0,0.28);
+      text-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
-    .showcase h2 .accent {
+    .title-lg .accent {
       color: var(--gold-2);
     }
 
     .meta-row {
       display: flex;
       align-items: center;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 14px;
       margin-top: 14px;
-      padding-top: 14px;
+      padding-top: 12px;
       border-top: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.78);
-      font-size: 12px;
-      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.72);
+      font-size: 11px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
@@ -547,44 +527,44 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: rgba(255,255,255,0.8);
     }
 
-    .meta-item .mini {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--gold-2);
-      box-shadow: 0 0 0 2px rgba(246, 211, 129, 0.24);
-      display: inline-block;
-    }
-
-    .status-strip {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      min-height: 48px;
-      padding: 9px 14px 10px 18px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      background: rgba(17,17,17,0.7);
-      font-size: 12px;
-      color: rgba(255,255,255,0.74);
-    }
-
-    .status-strip .status {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .status-strip .status .dot {
+    .meta-item .dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: var(--gold-2);
-      box-shadow: 0 0 0 3px rgba(244, 211, 126, 0.2);
+      box-shadow: 0 0 0 3px rgba(244,208,143,0.18);
+      display: inline-block;
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 52px;
+      background: rgba(18,18,18,0.8);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 16px 12px 18px;
+      color: rgba(255,255,255,0.78);
+      font-size: 12px;
+    }
+
+    .status-group {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-2);
+      display: inline-block;
+      box-shadow: 0 0 0 3px rgba(244,208,143,0.18);
     }
 
     .slider {
@@ -593,12 +573,26 @@
       gap: 12px;
       flex: 1;
       justify-content: center;
-      padding: 0 20px;
+      min-width: 220px;
+      padding: 0 12px;
+    }
+
+    .slider-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.9);
+      font-size: 16px;
     }
 
     .slider-track {
       position: relative;
-      width: min(520px, 80%);
+      flex: 1;
+      max-width: 520px;
       height: 10px;
       border-radius: 999px;
       background: rgba(255,255,255,0.18);
@@ -608,54 +602,41 @@
 
     .slider-fill {
       position: absolute;
-      left: 0;
       top: 0;
+      left: 0;
       bottom: 0;
       width: 48%;
+      background: linear-gradient(90deg, rgba(244,208,143,0.72), rgba(255,255,255,0.9));
       border-radius: inherit;
-      background: linear-gradient(90deg, rgba(245,216,146,0.75), rgba(255,255,255,0.8));
     }
 
-    .slider-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 16px;
-    }
-
-    .muted-right {
+    .bar-labels {
       display: flex;
       align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
       justify-content: flex-end;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,0.72);
+      font-size: 12px;
     }
 
-    @media (max-width: 1120px) {
-      .nav { grid-template-columns: 1fr; padding-top: 12px; padding-bottom: 12px; }
-      .menu-right { justify-content: flex-start; }
-      .grid { grid-template-columns: 1fr; }
-      .showcase { min-height: 540px; }
-      .left { order: 2; }
-      .right { order: 1; }
+    @media (max-width: 1100px) {
+      .nav { grid-template-columns: 1fr; padding-top: 10px; padding-bottom: 10px; }
+      .utility { justify-content: flex-start; }
+      .main { grid-template-columns: 1fr; }
+      .showcase { min-height: 520px; }
     }
 
     @media (max-width: 680px) {
-      .app { padding: 0; }
-      .topbar { padding: 0 10px 0 12px; }
-      .topbar-title { font-size: 13px; }
-      .topbar-actions { gap: 8px; }
-      .nav { padding-left: 10px; padding-right: 10px; }
-      .grid { padding-left: 10px; padding-right: 10px; }
-      .brand-copy { font-size: 1.3rem; }
-      .menu-tab { padding: 8px 10px; }
-      .status-strip { flex-direction: column; align-items: stretch; }
-      .slider { padding: 0; }
+      .topbar { padding-left: 12px; padding-right: 10px; }
+      .header-center { font-size: 12px; }
+      .nav { padding-left: 12px; padding-right: 12px; }
+      .main { padding-left: 10px; padding-right: 10px; }
+      .bar { flex-direction: column; align-items: stretch; }
+      .status-group, .bar-labels { justify-content: flex-start; }
+      .brand-copy { font-size: 1.25rem; }
+      .tabs { justify-content: flex-start; }
+      .title-lg { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -664,13 +645,11 @@
     <div class="shell">
       <header class="topbar">
         <div></div>
-        <div class="topbar-title">Mise en Place — <strong>Beyond ChefBot Culinary Lab</strong></div>
-        <div class="topbar-actions">
-          <div class="stack">
-            <div class="pill light">↺ Remix</div>
-            <div class="pill light">◫ Device</div>
-            <div class="pill">⋮</div>
-          </div>
+        <div class="header-center">Mise en Place — <strong>Beyond ChefBot Culinary Lab</strong></div>
+        <div class="header-actions">
+          <div class="mini-btn">↺ Remix</div>
+          <div class="mini-btn">◫ Device</div>
+          <div class="mini-btn">⋮</div>
         </div>
       </header>
 
@@ -678,84 +657,88 @@
         <div class="nav">
           <div class="brand">
             <div class="seal">G</div>
-            <div class="brand-copy">Gourmet Soup Lab<small>158-Page Chef Plan • Chef Tommy</small></div>
+            <div class="brand-copy">Gourmet Soup Lab<small>158-page chef plan • Chef Tommy</small></div>
           </div>
 
-          <div class="menu-tabs">
-            <div class="menu-tab">150-Page Roadmap</div>
-            <div class="menu-tab">Gourmet Lab Menu</div>
-            <div class="menu-tab">Steps 1–20 (Buffet Prep)</div>
-            <div class="menu-tab active"><span class="dot"></span>Customer Drop</div>
+          <div class="tabs">
+            <div class="tab">150-Page Roadmap</div>
+            <div class="tab">Gourmet Lab Menu</div>
+            <div class="tab">Steps 1–20 (Buffet Prep)</div>
+            <div class="tab active"><span class="dot"></span>Customer Drop</div>
           </div>
 
-          <div class="menu-right">
-            <div class="ghost-btn">Kitchen Clipboard</div>
-            <div class="ghost-btn">Fresh vs Frozen</div>
-            <div class="ghost-btn">2-Tool Setup</div>
+          <div class="utility">
+            <div class="utility-chip">Kitchen Clipboard</div>
+            <div class="utility-chip">Fresh vs Frozen</div>
+            <div class="utility-chip">2-Tool Setup</div>
           </div>
         </div>
       </div>
 
-      <main class="grid">
+      <main class="main">
         <aside class="left">
-          <section class="card drop-card">
+          <section class="panel drop-card">
             <div>
-              <h3><span class="star">✦</span> This week's drop is live!</h3>
-              <p class="quote">"Wild Forest Mushroom &amp; Truffle Velouté Kit with whole crusty sourdough boule and cultured thyme butter."</p>
+              <div class="drop-title"><span class="star">✦</span> This week's drop is live!</div>
+              <p class="copy">“Wild Forest Mushroom &amp; Truffle Velouté Kit with whole crusty sourdough boule and cultured thyme butter.”</p>
               <p>Only 50 kits available for Friday nationwide DHL delivery. Pre-orders lock Wednesday at midnight.</p>
             </div>
 
             <div>
               <div class="price-row">
                 <div class="price"><strong>£29.50</strong> (Serves 2–4)</div>
-                <button class="link">Link below ↓</button>
+                <button class="link-btn">Link below ↓</button>
               </div>
-              <div class="muted-strip">
-                <span class="label">Customer taps link → opens clean page on right</span>
+              <div class="micro-note">
+                <span class="badge-pill">Customer taps link → opens clean page on right</span>
               </div>
             </div>
           </section>
 
-          <section class="card guardrail">
-            <div class="guardrail-top"><span class="icon">!</span> The Kitchen Guardrail</div>
+          <section class="panel guardrail">
+            <div class="guardrail-header"><span class="icon">!</span> The Kitchen Guardrail</div>
             <p>If order #50 comes in while someone else is browsing, the system instantly blocks their payment and says: “Sorry Chef, sold out for this week! Kitchen is at full capacity.” You never risk overbooking your domestic oven.</p>
           </section>
         </aside>
 
         <section class="right">
           <div class="showcase">
-            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1600&q=80" alt="Crispy fried chicken feast in a premium box" />
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1800&q=80" alt="Premium gourmet chicken drop with restaurant styling" />
 
-            <div class="badge-row">
+            <div class="floating-bar">
               <div class="drop-badge"><span class="star">✦</span> Friday 24h Drop</div>
-              <div class="remaining">◔ Only 7 kits left!</div>
+              <div class="stock-badge"><span class="star">◔</span> Only 7 kits left!</div>
             </div>
 
             <div class="showcase-caption">
-              <div class="caption-top">
-                <span class="caption-inline">Delivered Nationwide Friday via DHL</span>
+              <div class="caption-meta">
+                <span class="inline">Delivered nationwide Friday via DHL</span>
               </div>
-              <h2>Crunch <span class="accent">&amp; Glaze</span> Buttermilk Chicken Feast Box</h2>
+              <h2 class="title-lg">Crunch <span class="accent">&amp; Glaze</span> Buttermilk Chicken Feast Box</h2>
               <div class="meta-row">
-                <span class="meta-item"><span class="mini"></span> 3-serve</span>
-                <span class="meta-item"><span class="mini"></span> 2 sauces</span>
-                <span class="meta-item"><span class="mini"></span> Tanner creation</span>
+                <span class="meta-item"><span class="dot"></span> Three sauces</span>
+                <span class="meta-item"><span class="dot"></span> Crusty accompaniments</span>
+                <span class="meta-item"><span class="dot"></span> Weekend-ready</span>
               </div>
             </div>
           </div>
 
-          <div class="status-strip">
-            <div class="status"><span class="dot"></span> WhatsApp / SMS Blast</div>
-            <div class="status"><span class="dot"></span> Monday 09:00</div>
+          <div class="bar">
+            <div class="status-group">
+              <span><span class="status-dot"></span> WhatsApp / SMS Blast</span>
+              <span><span class="status-dot"></span> Mon 09:00</span>
+            </div>
+
             <div class="slider">
               <div class="slider-btn">‹</div>
               <div class="slider-track"><div class="slider-fill"></div></div>
               <div class="slider-btn">›</div>
             </div>
-            <div class="muted-right">
+
+            <div class="bar-labels">
               <span>FSA Food Safety Registered Home Hub</span>
               <span>Crafted by Chef Tommy</span>
-              <span>Woodcool 48h chilled Courier Delivery</span>
+              <span>Woodcool 48h chilled courier delivery</span>
             </div>
           </div>
         </section>
