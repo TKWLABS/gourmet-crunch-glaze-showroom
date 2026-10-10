@@ -1,39 +1,393 @@
 <!doctype html>
-<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f3eb"><title>Gourmet Crunch &amp; Glaze — a chef-led food concept</title>
-<style>
-:root{--ink:#25372c;--green:#405c49;--cream:#f6f3eb;--paper:#fffefa;--gold:#b78a50;--muted:#69736a;--line:#deded3;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);line-height:1.5;background:var(--paper);color:var(--ink)}h1,h2,h3{font-family:var(--serif);font-weight:400}.wrap{max-width:1200px;margin:0 auto;padding:0 20px}.top{border-bottom:1px solid var(--line);padding:20px 0;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:600}.brandseal{height:50px;width:50px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:14px;color:var(--gold)}.brandname{font-size:18px}.brandname small{display:block;font-size:10px;color:var(--muted);font-weight:400}.nav{display:flex;gap:30px;align-items:center}.nav a{text-decoration:none;color:var(--ink);font-size:14px;transition:color 0.2s}.nav a:hover{color:var(--gold)}.nav .cta{border:1px solid var(--gold);padding:8px 16px;border-radius:4px;color:var(--gold)}.eyebrow{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:80px 0}.hero h1{font-size:52px;line-height:1.2;margin-bottom:20px}.hero h1 em{font-style:italic;color:var(--gold)}.hero p{font-size:16px;line-height:1.6;color:var(--muted);margin-bottom:30px}.visual{height:500px;overflow:hidden;border-radius:8px}.visual img{width:100%;height:100%;object-fit:cover}.menu{padding:60px 0}.heading{margin-bottom:40px}.heading h2{font-size:48px;line-height:1.2;margin-bottom:16px}.heading p{font-size:16px;color:var(--muted);max-width:600px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}.card{background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:transform 0.2s}.card:hover{transform:translateY(-4px)}.photo{width:100%;height:280px;overflow:hidden;background:#f0f0f0}.photo img{width:100%;height:100%;object-fit:cover}.body{padding:24px}.body h3{font-size:22px;margin-bottom:12px;font-weight:400}.body p{font-size:14px;color:var(--muted);line-height:1.6}.body .cta{display:inline-block;margin-top:16px;padding:10px 16px;background:var(--gold);color:white;border-radius:4px;text-decoration:none;font-size:12px;font-weight:600}
-@media(max-width:780px){.hero{grid-template-columns:1fr;gap:25px}.visual{height:360px}.visual img{height:335px}.cards{gap:12px}.photo{height:175px}.body{padding:15px}.body h3{font-size:20px}.body p{min-height:0}.nav{flex-direction:column;gap:10px}}
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f3eb">
+    <title>Gourmet Crunch &amp; Glaze — a chef-led food concept</title>
+    <meta name="description" content="A rustic, chef-led food concept exploring elevated soups, chicken meals, and honest customer feedback.">
+    <style>
+      :root {
+        --ink: #25372c;
+        --green: #405c49;
+        --cream: #f6f3eb;
+        --paper: #fffefa;
+        --gold: #b78a50;
+        --muted: #69736a;
+        --line: #deded3;
+        --serif: Georgia, serif;
+        --sans: Arial, sans-serif;
+      }
 
-.brandmark{width:50px;height:50px;object-fit:cover;border-radius:50%;flex:none;border:1px solid #a56b00}.footer .brandmark{width:46px;height:46px}.brandseal{height:50px;width:50px;border:1px solid var(--gold)}.feedback{background:var(--cream);padding:60px 0;margin:60px 0}.feedgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.feedcopy h2{font-size:42px;margin-bottom:20px}.feedcopy p{font-size:15px;color:var(--muted);margin-bottom:30px}.feedform{display:flex;flex-direction:column;gap:12px}.feedform label{font-size:14px;font-weight:500}.feedform input[type=radio]{margin-right:8px}.feedform button{padding:12px 24px;background:var(--gold);color:white;border:none;border-radius:4px;font-weight:600;cursor:pointer;font-size:14px}.story{padding:60px 0}.storygrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.story img{width:100%;border-radius:8px}.story h2{font-size:42px;margin-bottom:20px}.story p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px}footer{border-top:1px solid var(--line);padding:40px 0;margin-top:60px}.footertop{display:flex;justify-content:space-between;margin-bottom:30px}.footernav{display:flex;gap:40px}.footernav a{text-decoration:none;color:var(--muted);font-size:13px;transition:color 0.2s}.footernav a:hover{color:var(--ink)}
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.5;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .wrap {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+      .top {
+        border-bottom: 1px solid rgba(37, 55, 44, 0.2);
+        background: rgba(246, 243, 235, 0.92);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 72px;
+        gap: 18px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+      .brandseal {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--gold);
+        background: #fff;
+        font-size: 0.7rem;
+        font-weight: 700;
+      }
+      .brandname {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.92rem;
+        line-height: 1.1;
+      }
+      .brandname small {
+        color: var(--gold);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.58rem;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .cta {
+        display: inline-block;
+        padding: 10px 16px;
+        border: 1px solid rgba(183, 138, 80, 0.75);
+        border-radius: 999px;
+        color: var(--green);
+        font-weight: 700;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.18fr 0.82fr;
+        gap: 34px;
+        align-items: center;
+        padding: 64px 0 32px;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--gold);
+        font-size: 0.72rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      h1, h2, h3 {
+        margin: 0 0 12px;
+        font-family: var(--serif);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: clamp(2.8rem, 5vw, 5rem);
+      }
+      h2 {
+        font-size: clamp(2.1rem, 3vw, 3rem);
+      }
+      .hero p, .menu p, .story p, .feedback p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.02rem;
+      }
+      .hero-visual {
+        min-height: 430px;
+        border-radius: 26px;
+        overflow: hidden;
+        box-shadow: 0 16px 38px rgba(37, 55, 44, 0.12);
+        background: #ddd;
+      }
+      .hero-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .menu {
+        padding: 26px 0 12px;
+      }
+      .heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: flex-end;
+        margin-bottom: 20px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(37, 55, 44, 0.08);
+        border-radius: 22px;
+        overflow: hidden;
+      }
+      .photo {
+        height: 300px;
+        background: #ddd;
+      }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .body {
+        padding: 18px 18px 20px;
+      }
+      .body h3 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        margin-bottom: 8px;
+      }
+      .body p {
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+      .story {
+        padding: 40px 0 64px;
+      }
+      .story-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 26px;
+        align-items: center;
+      }
+      .story-grid img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        border-radius: 22px;
+      }
+      .feedback {
+        background: #171614;
+        color: #f4f0e8;
+        padding: 54px 0;
+      }
+      .feedback .wrap {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 24px;
+        align-items: center;
+      }
+      .feedback p, .feedback .eyebrow {
+        color: rgba(244, 240, 232, 0.8);
+      }
+      .feedback-box {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 18px;
+      }
+      .pill {
+        display: inline-block;
+        border: 1px solid rgba(243, 160, 0, 0.6);
+        color: #ffbf5f;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      footer {
+        padding: 28px 0 50px;
+        border-top: 1px solid rgba(37,55,44,0.12);
+      }
+      .foot { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+      @media (max-width: 840px) {
+        .hero, .cards, .story-grid, .feedback .wrap { grid-template-columns: 1fr; }
+        .heading { align-items: flex-start; display: block; }
+        .nav { align-items: flex-start; flex-direction: column; padding: 12px 0; }
+        .nav-links { width: 100%; justify-content: flex-start; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap nav">
+        <a class="brand" href="#top" aria-label="Gourmet Crunch and Glaze home">
+          <span class="brandseal">GCG</span>
+          <span class="brandname">Gourmet Crunch &amp; Glaze<small>Chef-led comfort</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#soups">Soups</a>
+          <a href="#chicken">Chicken</a>
+          <a href="#feedback">Feedback</a>
+          <a href="#story">Story</a>
+          <a class="cta" href="#feedback">Tell us what you think</a>
+        </nav>
+      </div>
+    </header>
 
-.photo.pair{display:grid;grid-template-columns:1.55fr .72fr;gap:3px}.photo.pair>.dish{width:100%;height:100%;object-fit:cover;min-width:0}.photo.pair .origin{display:grid;grid-template-rows:1fr 1fr;gap:3px}.photo.pair .origin img{width:100%;height:100%;object-fit:cover}
-.kit-info{margin:13px 0 15px;border-top:1px solid #4a3e2e;border-bottom:1px solid #4a3e2e;color:#ece5d8}.kit-info summary{padding:11px 0;cursor:pointer;list-style:none;color:#ffbd45;font:600 10px var(--sans);letter-spacing:.05em;text-transform:uppercase}.kit-info[open] summary{color:#ffc14a}.kit-info p{margin:13px 0;font-size:13px;line-height:1.5}
-:root{--ink:#f4f0e8;--green:#f3a000;--cream:#0b0a09;--paper:#171614;--gold:#f3a000;--muted:#b8b2a8;--line:#3a352e}
-body{background:#0b0a09;color:var(--ink)}.top{border-color:#34302a}.brandname small{color:#f3a000}.nav a{color:#d0c9bd}.nav a:hover{color:#ffc14a}.nav .cta{border-color:#a76d00;color:#ffc14a}.eyebrow{color:#8a8580}.heading h2{color:#ffc14a}.heading p{color:#a89e94}.card{background:#1a1815;box-shadow:0 2px 8px rgba(0,0,0,0.4)}.body{background:#1a1815}.body p{color:#a89e94}.hero h1{color:#ffc14a}.hero p{color:#a89e94}.feedback{background:#0f0e0c}.feedcopy h2{color:#ffc14a}.feedcopy p{color:#a89e94}.story h2{color:#ffc14a}.story p{color:#a89e94}.footernav a{color:#8a8580}.footernav a:hover{color:#ffc14a}
-</style></head><body>
-<header class="wrap top"><a class="brand" href="#top"><span class="brandseal" aria-hidden="true">GCG</span><span class="brandname">Gourmet Crunch &amp; Glaze<small>Founded by Chef Tom · Rustic heritage kitchens</small></span></a><nav class="nav"><a href="#soups">Soups</a><a href="#chicken">Chicken</a><a href="#story">Our Story</a><a href="#feedback" class="cta">Feedback</a></nav></header>
-<main id="top"><section class="wrap hero"><div><div class="eyebrow">A new kind of comfort</div><h1>Rustic roots.<br><em>Engineered flavour.</em></h1><p>A first look at Gourmet Crunch &amp; Glaze, founded by Chef Tom. We're exploring a new approach to comfort food—quality ingredients, refined technique, and a bit of theatrical charm.</p><p style="font-size:13px;color:var(--muted)"><em>This showroom presents early-stage concepts. Your feedback shapes what comes next.</em></p></div><div class="visual"><img loading="lazy" src="https://images.unsplash.com/photo-1547592166-7aae4d755744?w=600&amp;q=80" alt="A warm bowl of soup"></div></section>
-<section class="wrap menu" id="soups"><div class="heading"><div class="eyebrow">A first taste</div><h2>Three soups.<br>Which one calls to you?</h2><p>Inspired by the Gourmet Crunch &amp; Glaze soup concept, these are designed for warmth, comfort, and the kind of flavour that lingers.</p></div><div class="cards">
-<article class="card"><div class="photo pair"><img class="dish" loading="lazy" src="soup-ayrshire-leek.jpg" alt="Ayrshire potato and garden leek soup with crisp croutons"><div class="origin"><img loading="lazy" src="soup-ayrshire-leek-detail.jpg" alt="Detail of croutons"></div></div><div class="body"><h3>Ayrshire Leek &amp; Potato</h3><p>Muted earth tones with a golden crunch. Leeks from the south-west, potatoes from heritage stock. Topped with house-made croutons finished in brown butter and thyme.</p><details class="kit-info"><summary>Kit info</summary><p><strong>Serves:</strong> 4</p><p><strong>Prep:</strong> 15 mins | <strong>Cook:</strong> 35 mins</p><p><strong>Containments:</strong> Gluten (croutons), Dairy</p></details></div></article>
+    <main id="top">
+      <section class="wrap hero">
+        <div>
+          <div class="eyebrow">A new kind of comfort</div>
+          <h1>Rustic roots.<br><em>Engineered flavour.</em></h1>
+          <p>A first look at Gourmet Crunch &amp; Glaze, a chef-led food concept built around comforting soups, elevated chicken plates, and a warm, honest hospitality story.</p>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80" alt="A rustic bowl of soup with herbs and warm ingredients">
+        </div>
+      </section>
 
-<article class="card"><div class="photo pair"><img class="dish" loading="lazy" src="soup-french-onion.jpg" alt="French onion soup crowned with toasted cheese croutons"><div class="origin"><img loading="lazy" src="soup-french-onion-detail.jpg" alt="Detail of cheese crust"></div></div><div class="body"><h3>French Onion</h3><p>Long-cooked onions meeting beef stock in the classic style. A crust of Gruyère and toasted bread seals the bowl—the spoon breaks through to the savoury depths below.</p><details class="kit-info"><summary>Kit info</summary><p><strong>Serves:</strong> 4</p><p><strong>Prep:</strong> 20 mins | <strong>Cook:</strong> 90 mins</p><p><strong>Containments:</strong> Gluten, Dairy</p></details></div></article>
+      <section class="wrap menu" id="soups">
+        <div class="heading">
+          <div>
+            <div class="eyebrow">A first taste</div>
+            <h2>Three soups.<br>Which one calls to you?</h2>
+          </div>
+          <p>Inspired by slow-cooked comfort and refined flavour.</p>
+        </div>
 
-<article class="card"><div class="photo pair"><img class="dish" loading="lazy" src="soup-creme-de-barry.jpg" alt="Crème de Barry cauliflower soup with croutons and chives"><div class="origin"><img loading="lazy" src="soup-creme-de-barry-detail.jpg" alt="Detail of chive garnish"></div></div><div class="body"><h3>Crème de Barry</h3><p>Cauliflower in a silken veil of cream and white wine. Simple, refined, and finished with a scatter of crisp sage and fresh chives.</p><details class="kit-info"><summary>Kit info</summary><p><strong>Serves:</strong> 4</p><p><strong>Prep:</strong> 15 mins | <strong>Cook:</strong> 30 mins</p><p><strong>Containments:</strong> Gluten (croutons), Dairy</p></details></div></article>
-</div></section>
+        <div class="cards">
+          <article class="card">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1200&q=80" alt="Ayrshire potato and garden leek soup with crisp croutons">
+            </div>
+            <div class="body">
+              <h3>Ayrshire Leek</h3>
+              <p>Silky potato, garden leek, and a savoury finish that feels at home in any season.</p>
+            </div>
+          </article>
 
-<section class="wrap menu" id="chicken" style="padding-top:0"><div class="heading"><div class="eyebrow">The Chicken Lab</div><h2>And a little more<br>than soup.</h2><p>Chicken meal concepts from the research kitchen. These are experiments—refined, but exploratory.</p></div><div class="cards">
-<article class="card"><div class="photo"><img loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/delish-230502-06-fried-chicken-0887-eb-lead-645ec6f9a226a.jpg?resize=1200:*" alt="Golden fried chicken with crispy skin"></div><div class="body"><h3>Golden Fried Chicken</h3><p>Buttermilk-brined bird, hand-dredged in a proprietary spice blend, fried to a shattering crunch. Served with house pickles and a warm biscuit.</p></div></article>
+          <article class="card">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80" alt="French onion soup crowned with toasted cheese croutons">
+            </div>
+            <div class="body">
+              <h3>French Onion</h3>
+              <p>Deep caramel notes, toasted cheese, and a rich broth shaped for slow, comforting evenings.</p>
+            </div>
+          </article>
 
-<article class="card"><div class="photo"><img loading="lazy" src="https://scottishscran.com/wp-content/uploads/2020/08/Balmoral-Chicken-Recipe-33-1024x683.jpg" alt="Balmoral chicken wrapped in bacon, served with red wine sauce"></div><div class="body"><h3>Balmoral Chicken</h3><p>A Scottish classic: chicken breast stuffed with haggis and wrapped in bacon. Finished with a red wine and mushroom gravy—warm, rich, and deeply savoury.</p></div></article>
+          <article class="card">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Crème de Barry cauliflower soup with croutons and chives">
+            </div>
+            <div class="body">
+              <h3>Crème de Barry</h3>
+              <p>Cauliflower, cream, and gentle herbs with a polished finish that feels elegant and familiar.</p>
+            </div>
+          </article>
+        </div>
+      </section>
 
-<article class="card"><div class="photo"><img loading="lazy" src="https://images.pexels.com/photos/5773964/pexels-photo-5773964.jpeg?cs=srgb&amp;dl=pexels-luisbecerrafotografo-5773964.jpg&amp;fm=jpg" alt="Roasted chicken with herbs and root vegetables"></div><div class="body"><h3>Herb-Roasted Chicken</h3><p>Free-range bird, dry-brined for two days, roasted whole with thyme, rosemary, and lemon. Served with its own jus and crisp root vegetables.</p></div></article>
-</div></section>
+      <section class="wrap menu" id="chicken" style="padding-top: 0;">
+        <div class="heading">
+          <div>
+            <div class="eyebrow">The chicken lab</div>
+            <h2>And a little more<br>than soup.</h2>
+          </div>
+          <p>Chicken meal concepts designed to feel substantial but still comforting.</p>
+        </div>
 
-<section class="feedback" id="feedback"><div class="wrap feedgrid"><div class="feedcopy"><div class="eyebrow">Your honest opinion</div><h2>Would you<br>buy this?</h2><p>We're exploring whether these concepts resonate. Your feedback—direct, unfiltered—helps us shape what comes next. Takes 10 seconds.</p></div><div class="feedform"><form><fieldset style="border:none;padding:0"><legend style="margin-bottom:16px;font-size:14px;font-weight:500">Which appeals to you most?</legend><label><input type="radio" name="concept" value="soups"> The soup kits</label><label><input type="radio" name="concept" value="chicken"> The chicken concepts</label><label><input type="radio" name="concept" value="both"> Both equally</label><label><input type="radio" name="concept" value="neither"> Neither quite yet</label></fieldset><button type="submit">Submit feedback</button></form></div></div></section>
+        <div class="cards">
+          <article class="card">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1200&q=80" alt="Golden fried chicken with fresh sides">
+            </div>
+            <div class="body">
+              <h3>Cruncher</h3>
+              <p>Golden, crisp, and built for a hearty lunch that still feels premium.</p>
+            </div>
+          </article>
 
-<section class="wrap story" id="story"><div class="storygrid"><img loading="lazy" src="https://static.toprecepty.cz/fotky/images/15/14260-1920-1080.jpg" alt="A bowl of soup with herbs and golden croutons"><div><div class="eyebrow">The idea</div><h2>Why now?</h2><p>After 15 years in professional kitchens, I noticed something: comfort food had lost its craft. Mass production had made it convenient but forgettable. There's an opportunity to bring rigour back—to prove that simple food, made with intention, can be both accessible and exciting.</p><p>Gourmet Crunch &amp; Glaze explores that middle ground. Not fine dining. Not casual. Something else—food that respects both the ingredient and the person eating it.</p><p style="margin-top:24px"><em>Right now, we're testing concepts. Feedback from people like you will determine whether we move forward, pivot, or close the kitchen.</em></p></div></div></section></main>
+          <article class="card">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=1200&q=80" alt="Balmoral-inspired chicken plate with herbs and potatoes">
+            </div>
+            <div class="body">
+              <h3>Balmoral Roast</h3>
+              <p>Herby, warm, and deeply comforting with a classic Scottish sensibility.</p>
+            </div>
+          </article>
 
-<footer><div class="wrap"><div class="footertop"><a class="brand" href="#top"><span class="brandseal" aria-hidden="true">GCG</span><span class="brandname">Gourmet Crunch &amp; Glaze<small>Founded by Chef Tom</small></span></a><nav class="footernav"><a href="#soups">Soups</a><a href="#chicken">Chicken</a><a href="#story">Story</a><a href="#feedback">Feedback</a></nav></div><p style="font-size:13px;color:var(--muted)">Early-stage concepts. All rights reserved. • <a href="mailto:hello@gourmetcrunchglaze.test" style="color:var(--muted);text-decoration:none">Get in touch</a></p></div></footer>
+          <article class="card">
+            <div class="photo">
+              <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1200&q=80" alt="A modern chicken dish and sides in a stylish setting">
+            </div>
+            <div class="body">
+              <h3>Modern Roast</h3>
+              <p>Clean, bright, and stacked with texture for customers wanting something elevated.</p>
+            </div>
+          </article>
+        </div>
+      </section>
 
-<script>(()=>{const key='gourmetSoupLabFeedbackV1';let answer='';const $=id=>document.getElementById(id);const list=()=>{try{return JSON.parse(localStorage.getItem(key)||'[]')}catch{return[]}};const set=()=>{const now=new Date().toISOString().split('T')[0];const data=list();data.push({date:now,concept:answer});localStorage.setItem(key,JSON.stringify(data))};const form=$('feedback');if(form){const radios=form.querySelectorAll('input[type="radio"]');radios.forEach(r=>{r.addEventListener('change',e=>{answer=e.target.value})});form.addEventListener('submit',e=>{e.preventDefault();if(answer){set();alert('Thank you for your feedback! 🍲');answer='';radios.forEach(r=>r.checked=false)}})}})();
-</script></body></html>
+      <section class="feedback" id="feedback">
+        <div class="wrap">
+          <div>
+            <div class="eyebrow">Your honest opinion</div>
+            <h2>Would you<br>buy this?</h2>
+            <p>We’re exploring whether these flavours and formats have enough pull to become a real food concept.</p>
+          </div>
+          <div class="feedback-box">
+            <div class="pill">Quick feedback</div>
+            <p style="margin-top: 12px;">This concept works best when it feels grounded, seasonal, and easy to trust. A balanced menu, visible ingredients, and a clear food story make the difference.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap story" id="story">
+        <div class="story-grid">
+          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1400&q=80" alt="A bowl of soup served with herbs and a warm, rustic finish.">
+          <div>
+            <div class="eyebrow">The idea</div>
+            <h2>Comfort food with a chef’s eye.</h2>
+            <p>Gourmet Crunch &amp; Glaze is imagined as a warm, premium casual concept centred on honest ingredients and flavour-led execution. It blends traditional comfort with a little creative edge, giving customers the appeal of familiarity without losing character.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap foot">
+        <a class="brand" href="#top">
+          <span class="brandseal">GCG</span>
+          <span class="brandname">Gourmet Crunch &amp; Glaze<small>Chef-led comfort</small></span>
+        </a>
+        <span style="color: var(--muted);">Built for a warm, modern food concept.</span>
+      </div>
+    </footer>
+  </body>
+</html>
