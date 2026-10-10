@@ -63,25 +63,19 @@
     }
     
     .logo-seal {
-      width: 56px;
-      height: 56px;
-      border: 2px solid var(--gold);
+      width: 72px;
+      height: 72px;
+      border: 2.5px solid var(--gold);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--serif);
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--gold);
-      background: rgba(243, 160, 0, 0.05);
       flex-shrink: 0;
       overflow: hidden;
       padding: 0;
     }
 
-    .logo-seal img,
-    .footer-seal img {
+    .logo-seal img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -90,7 +84,7 @@
     
     .logo-text h1 {
       font-family: var(--serif);
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.5px;
       margin: 0 0 4px;
@@ -98,7 +92,7 @@
     }
     
     .logo-text p {
-      font-size: 8px;
+      font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -130,7 +124,7 @@
     .cta-nav {
       margin-left: auto;
       padding: 10px 20px;
-      border: 1px solid var(--gold);
+      border: 1.5px solid var(--gold);
       color: var(--gold);
       border-radius: 50px;
       font-size: 11px;
@@ -538,20 +532,23 @@
     }
     
     .footer-seal {
-      width: 48px;
-      height: 48px;
-      border: 1.5px solid var(--gold);
+      width: 56px;
+      height: 56px;
+      border: 2px solid var(--gold);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--serif);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--gold);
       flex-shrink: 0;
       overflow: hidden;
       padding: 0;
+    }
+
+    .footer-seal img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     
     .footer-text {
@@ -565,7 +562,6 @@
       color: #8a8278;
     }
     
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .container { padding: 0 32px; }
       .products-grid { grid-template-columns: repeat(2, 1fr); }
@@ -603,10 +599,10 @@
           </div>
         </a>
         <nav>
-          <a href="#soups">Soups</a>
-          <a href="#chicken">Chicken</a>
-          <a href="#story">Story</a>
-          <a href="#feedback" class="cta-nav">Give Feedback</a>
+          <a href="#soups">SOUPS</a>
+          <a href="#chicken">CHICKEN</a>
+          <a href="#story">STORY</a>
+          <a href="#feedback" class="cta-nav">GIVE FEEDBACK</a>
         </nav>
       </div>
     </div>
@@ -633,13 +629,14 @@
       <div class="container">
         <div class="section-header">
           <div class="label">Premium Soups</div>
-          <h2>Three Curated<br>Soup Concepts</h2>
+          <h2>Three Curated Soup Concepts</h2>
           <p>Elevated comfort with roots in classic European traditions. Each crafted for substance and satisfaction.</p>
         </div>
         <div class="products-grid">
+          <!-- AYRSHIRE LEEK POTATO -->
           <div class="product-card">
             <div class="product-image">
-              <img src="https://raw.githubusercontent.com/TKWLABS/gourmet-crunch-glaze-showroom/main/Screenshot_10-10-2026_1327_aistudio.google.com.jpeg" alt="Ayrshire potato and leek soup">
+              <img src="https://raw.githubusercontent.com/TKWLABS/gourmet-crunch-glaze-showroom/main/Screenshot_10-10-2026_1327_aistudio.google.com.jpeg?cache=1" alt="Ayrshire potato and leek soup">
               <span class="product-tag">Vegetarian</span>
             </div>
             <div class="product-info">
@@ -655,9 +652,10 @@
             </div>
           </div>
 
+          <!-- FRENCH ONION -->
           <div class="product-card">
             <div class="product-image">
-              <img src="https://raw.githubusercontent.com/TKWLABS/gourmet-crunch-glaze-showroom/main/Screenshot_10-10-2026_13235_aistudio.google.com.jpeg" alt="French onion soup">
+              <img src="https://raw.githubusercontent.com/TKWLABS/gourmet-crunch-glaze-showroom/main/Screenshot_10-10-2026_13235_aistudio.google.com.jpeg?cache=1" alt="French onion soup">
               <span class="product-tag">Classic</span>
             </div>
             <div class="product-info">
@@ -673,9 +671,10 @@
             </div>
           </div>
 
+          <!-- CREME DE BARRY -->
           <div class="product-card">
             <div class="product-image">
-              <img src="https://raw.githubusercontent.com/TKWLABS/gourmet-crunch-glaze-showroom/main/Screenshot_10-10-2026_13113_aistudio.google.com.jpeg" alt="Crème de Barry cauliflower soup">
+              <img src="https://raw.githubusercontent.com/TKWLABS/gourmet-crunch-glaze-showroom/main/Screenshot_10-10-2026_13113_aistudio.google.com.jpeg?cache=1" alt="Crème de Barry cauliflower soup">
               <span class="product-tag">Refined</span>
             </div>
             <div class="product-info">
@@ -699,7 +698,7 @@
       <div class="container">
         <div class="section-header">
           <div class="label">Chef's Laboratory</div>
-          <h2>Three Chicken<br>Concepts</h2>
+          <h2>Three Chicken Concepts</h2>
           <p>Substantial dishes designed for the modern palate. Premium ingredients prepared with precision and craft.</p>
         </div>
         <div class="products-grid">
